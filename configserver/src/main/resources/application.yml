@@ -5,10 +5,18 @@ spring:
     name: configserver
   cloud:
     config:
+      enabled: false
       server:
         git:
-          uri: file://${user.home}/config-repo
-
+          uri: https://github.com/leximus7/spring-cloud-config
+#          uri: file:///${user.home}/config-repo
+          validate_certificates: false
+#          proxy:
+#            https:
+#              host:
+#              password:
+#              port: '8080'
+#              username:
 
 server:
   port: 8888

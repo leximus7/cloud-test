@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebController {
 
-
     private NameProperties nameProperties;
 
     public WebController(NameProperties nameProperties) {

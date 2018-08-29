@@ -1,4 +1,7 @@
 spring:
   application:
     name: greeting
+#  cloud:
+#    config:
+#      label: master
 #debug: true
