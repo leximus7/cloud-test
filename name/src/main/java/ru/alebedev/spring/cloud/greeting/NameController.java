@@ -2,6 +2,7 @@ package ru.alebedev.spring.cloud.greeting;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -14,7 +15,7 @@ public class NameController {
         this.nameProperties = nameProperties;
     }
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String getName() {
         return nameProperties.getName();
     }

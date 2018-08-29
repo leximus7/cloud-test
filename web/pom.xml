@@ -5,7 +5,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-web-test-greeting</artifactId>
+  <artifactId>spring-web-test-webapp</artifactId>
 
 
   <parent>
@@ -30,6 +30,10 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
     </dependency>
     <!--<dependency>-->
     <!--<groupId>org.springframework.cloud</groupId>-->
