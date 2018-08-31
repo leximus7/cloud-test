@@ -1,20 +1,26 @@
 package ru.alebedev.spring.cloud.greeting;
 
 
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class NameService {
-    private static final String URL = "http://localhost:8091";
+    private NameFeignClient nameFeignClient;
 
-    private RestTemplate restTemplate;
-
-    public NameService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+    public NameService(NameFeignClient nameFeignClient) {
+        this.nameFeignClient = nameFeignClient;
     }
 
     public String getName() {
-        return restTemplate.getForObject(URL, String.class);
+        return nameFeignClient.getName();
+    }
+
+    @FeignClient("name")
+    static interface NameFeignClient {
+        @RequestMapping("/")
+        public String getName();
     }
 }

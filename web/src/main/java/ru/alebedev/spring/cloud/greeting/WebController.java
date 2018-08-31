@@ -17,10 +17,11 @@ public class WebController {
         this.nameService = nameService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping
     public String index() {
 //        return "qweasd";
-        return greetingService.getGreeting() + ", " + nameService.getName();
+//        return greetingService.getGreeting() + ", " + nameService.getName();
+        return nameService.getName();
     }
 
 }

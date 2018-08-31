@@ -14,7 +14,8 @@ public class GreetingService {
     }
 
     public String getGreeting() {
-        return restTemplate.getForObject(URL, String.class);
+//        return restTemplate.getForObject(URL, String.class);
+        return restTemplate.getForObject("http://greeting", String.class);
     }
 
     public String getGreeting(String locale) {
